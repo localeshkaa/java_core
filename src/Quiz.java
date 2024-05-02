@@ -7,6 +7,7 @@ public class Quiz {
         byte[] digest = md.digest("abracadabra".getBytes("UTF-8"));
         for (byte b : digest) {
             System.out.printf("%02x", b);
+
         }
     }
 }
