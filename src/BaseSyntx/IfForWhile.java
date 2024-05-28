@@ -22,16 +22,31 @@ public class IfForWhile {
 
     public static int[] mergeArrays(int[] a1, int[] a2) {
         int[] resArr = new int[a1.length + a2.length];
+        int iterA1 = 0, iterA2 = 0, iterRes = 0;
 
-        for (int iterA1 = 0, iterA2 = 0, iterRes = 0; iterRes < resArr.length-1; iterRes++) {
-            if (a1[iterA1] < a2[iterA2]) {
+        while (iterA1 < a1.length && iterA2 < a2.length) {
+            if (a1[iterA1] <= a2[iterA2]) {
                 resArr[iterRes] = a1[iterA1];
                 iterA1++;
-            } else if (a1[iterA1] > a2[iterA2]){
+            } else {
                 resArr[iterRes] = a2[iterA2];
                 iterA2++;
             }
+            iterRes++;
         }
-        return resArr; // your implementation here
+
+        while (iterA1 < a1.length) {
+            resArr[iterRes] = a1[iterA1];
+            iterA1++;
+            iterRes++;
+        }
+
+        while (iterA2 < a2.length) {
+            resArr[iterRes] = a2[iterA2];
+            iterA2++;
+            iterRes++;
+        }
+
+        return resArr;
     }
 }
