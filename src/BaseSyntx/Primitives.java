@@ -30,6 +30,7 @@ public class Primitives {
         }
         return count == 2;
 
+
     }
 
     public static int leapYearCount(int year) {
